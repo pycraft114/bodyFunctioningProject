@@ -1,0 +1,57 @@
+*{
+    box-sizing:border-box;
+}
+
+.graphs{
+    background-color: #9933cc;
+    display:inline-block;
+    border: 1px solid black;
+    padding:12%;
+    float:left;
+    width:100%;
+}
+
+.dataType{
+    background-color: #33b5e5;
+    display:inline-block;
+    border: 1px solid black;
+    padding:10px;
+    float:left;
+    width:100%;
+}
+
+.calendarDisplay,.listDisplay{
+    background-color: #47a135;
+    display:inline-block;
+    border: 1px solid black;
+    float:left;
+    width:50%;
+}
+.graph{
+    display:inline-block;
+}
+
+.calendarDisplay , .listDisplay{
+    display:inline-block;
+}
+
+.list{
+    overflow:scroll;
+}
+
+.weightRepDisplay{
+    background-color: darkgrey;
+    display:inline-block;
+    border: 1px solid black;
+    float:left;
+    width:50%;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}

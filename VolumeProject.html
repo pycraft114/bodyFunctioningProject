@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VolumeProject</title>
+    <link rel="stylesheet" href="VolumeProject.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <article class = graphs>
+        <div class = graph>Graph 1</div>
+        <div class = graph>Graph 2</div>
+        <div class = graph>Graph 3</div>
+    </article>
+
+    <nav class = dataType>
+        <a>Day</a>
+        <a>Week</a>
+        <a>Month</a>
+    </nav>
+
+    <section class = calendarDisplay>
+        <input type = "date" class = "calendar">
+    </section>
+
+    <section class = listDisplay>
+        <ul class = workouts>
+            <li class = "workoutLists">example</li>
+            <li class = "workoutLists">example</li>
+            <li class = "workoutLists">example</li>
+            <li class = "workoutLists">example</li>
+            <li class = "workoutLists">example</li>
+        </ul>
+
+        <button type = "button" onclick = "workoutPrompt()">+</button>
+        <button type = "button" onclick = "deleteButton()">-</button>
+        <button type = "button" onclick = "storeLists()">save</button>
+    </section>
+
+    <section class = weightRepDisplay>
+        <Div class = weightRep>
+            <p>(example)  [ 10 Kg x 12 rep  ]</p>
+            <p>(example)  [ 10 Kg x 12 rep  ]</p>
+        </Div>
+        <input type = "number" id = "kg" min = "0">[Kg]
+        <input type = "number" id = "rep" min = "0">[Rep]
+        <button type = "button">+</button>
+        <button type = "button">-</button>
+        <button type = "button">save</button>
+        <button type = "button">Volume</button>
+    </section>
+
+
+    <script src = "VolumeProject.js"></script>
+</body>
+</html>
