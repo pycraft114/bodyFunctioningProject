@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <title>VolumeProject</title>
     <link rel="stylesheet" href="VolumeProject.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-    <article class = graphs>
-        <div class = graph>Graph 1</div>
-        <div class = graph>Graph 2</div>
-        <div class = graph>Graph 3</div>
+    <article class = "graphs">
+        <div class="ct-chart1"></div>
+        <div class="ct-chart2"></div>
+        <div class = "graph">Graph 1</div>
+        <div class = "graph">Graph 2</div>
+        <div class = "graph">Graph 3</div>
     </article>
 
     <nav class = dataType>
         <a>Day</a>
-        <a>Week</a>
-        <a>Month</a>
     </nav>
 
     <section class = calendarDisplay>
@@ -25,33 +27,34 @@
     </section>
 
     <section class = listDisplay>
-        <ul class = workouts>
-            <li class = "workoutLists">example</li>
-            <li class = "workoutLists">example</li>
-            <li class = "workoutLists">example</li>
-            <li class = "workoutLists">example</li>
-            <li class = "workoutLists">example</li>
-        </ul>
+        <ul class = workouts></ul>
 
         <button type = "button" onclick = "workoutPrompt()">+</button>
-        <button type = "button" onclick = "deleteButton()">-</button>
         <button type = "button" onclick = "storeLists()">save</button>
+
     </section>
 
     <section class = weightRepDisplay>
-        <Div class = weightRep>
-            <p>(example)  [ 10 Kg x 12 rep  ]</p>
-            <p>(example)  [ 10 Kg x 12 rep  ]</p>
-        </Div>
-        <input type = "number" id = "kg" min = "0">[Kg]
+
+        <ul class = weightRepLists>
+            <li>example<button type = "button" class = "deleteWeightRep" >-</button></li>
+            <li>example<button type = "button" class = "deleteWeightRep" >-</button></li>
+            <li>example<button type = "button" class = "deleteWeightRep" >-</button></li>
+            <li>example<button type = "button" class = "deleteWeightRep" >-</button></li>
+
+        </ul>
+
+
+        <input type = "number" id = "weight" min = "0">[Kg]
         <input type = "number" id = "rep" min = "0">[Rep]
-        <button type = "button">+</button>
+        <button type = "button" onclick = "weightRepAdd()">+</button>
         <button type = "button">-</button>
-        <button type = "button">save</button>
-        <button type = "button">Volume</button>
+        <button type = "button" onclick = "storeVolume()">save</button>
+        <button type = "button" onclick = "DeleteWorkout()">Delete Workout</button>
     </section>
 
-
     <script src = "VolumeProject.js"></script>
+
+
 </body>
 </html>

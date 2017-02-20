@@ -1,0 +1,15 @@
+{
+  "name": "volumeproject",
+  "version": "1.0.0",
+  "description": "first npm",
+  "main": "VolumeProject.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.5.0",
+    "chartist": "^0.10.1"
+  }
+}
