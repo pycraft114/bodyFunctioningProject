@@ -64,6 +64,19 @@ workoutsTag.addEventListener("click",function(evt){
     }else{
         weightRepLists.innerHTML = "";
     }
+    //appends clickedWorkout to the list of workoutPicker
+    var result;
+    var pickerList = document.querySelector(".workoutPicker").children;
+    for(var i = 0; i < pickerList.length; i++) {
+        if(pickerList[i].innerHTML === clickedWorkout){
+            result = false;
+            return;
+        }else{result = true;}
+    }
+    if(result) {
+        var optionList = $("<option>" + clickedWorkout + "</option>");
+        $(".workoutPicker").append(optionList);
+    }
 });
 
 
@@ -152,23 +165,53 @@ function getVolumes(arrOfDate, arr){
     }
 }
 
-function dailyGraph() {
-    var volumesByDate = [];
-    var dates = Object.keys(localStorage);
-    getVolumes(dates,volumesByDate);
-    console.log(volumesByDate);
-    console.log(dates);
+function returnSpecificDate(workout,dateContainer,volumeContainer){
+    var keys = Object.keys(localStorage);
+    for(var i = 0; i < keys.length; i++){
+        var val = JSON.parse(localStorage.getItem(keys[i]));
+        if(val[keys[i]+workout]){
+            dateContainer.push(keys[i]); //왜 어펜드 안됌?
+            volumeContainer.push(val[keys[i]+workout+"Volume"]);
+            //===========================================================
+        }
+    }
+}
 
-    new Chartist.Line('.ct-chart2', {
-        labels: dates,
-        series: [volumesByDate]
+$('.workoutPicker').on("change",whenClickedPicker);
+function whenClickedPicker(evt){
+    var pickerValue = evt.target.value;
+    var specificDate = [];
+    var volumeForEach = [];
+    returnSpecificDate(pickerValue, specificDate,volumeForEach);
+
+    var chart = new Chartist.Line('.ct-chart1', {
+        labels: specificDate,
+        series: [
+            volumeForEach
+        ]
     }, {
         low: 0,
         showArea: true,
+        showPoint: true,
         width: 300,
-        height: 200
-
+        height:200
     });
+
+    chart.on('draw', function(data) {
+        if(data.type === 'line' || data.type === 'area') {
+            data.element.animate({
+                d: {
+                    begin: 2000 * data.index,
+                    dur: 2000,
+                    from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                    to: data.path.clone().stringify(),
+                    easing: Chartist.Svg.Easing.easeOutQuint
+                }
+            });
+        }
+    });
+
+
 }
 
 //html script 불러오는 순서 중요함

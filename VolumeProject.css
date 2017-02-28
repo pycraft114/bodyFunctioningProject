@@ -26,6 +26,7 @@
     border: 1px solid black;
     float:left;
     width:50%;
+    height:200px;
 }
 .graph{
     display:inline-block;
@@ -47,8 +48,14 @@
     width:50%;
 }
 
+.workoutPicker{
+    background-color: #f05b4f;
+    border: 1px solid black;
+}
 
-
+.scroll{
+    background-color : darkgrey;
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="col-"] {

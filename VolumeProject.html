@@ -12,10 +12,14 @@
 
     <article class = "graphs">
         <div class="ct-chart1"></div>
-        <div class="ct-chart2"></div>
-        <div class = "graph">Graph 1</div>
-        <div class = "graph">Graph 2</div>
-        <div class = "graph">Graph 3</div>
+
+        <select class = "workoutPicker">
+            <option selected disabled hidden>Select Workout</option>
+            <option>example1</option>
+            <option>example2</option>
+            <option>example3</option>
+            <option>example4</option>
+        </select>
     </article>
 
     <nav class = dataType>
@@ -52,7 +56,7 @@
         <button type = "button" onclick = "storeVolume()">save</button>
         <button type = "button" onclick = "DeleteWorkout()">Delete Workout</button>
     </section>
-
+    <script src = "jquery.js"></script>
     <script src = "VolumeProject.js"></script>
 
 
